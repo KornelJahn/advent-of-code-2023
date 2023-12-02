@@ -12,7 +12,9 @@ def test_part2():
     assert solve_part2(PUZZLE_INPUT) == None
 
 
-PUZZLE_INPUT = parse_input((Path(__file__).parent / "dayXX.txt").read_text())
+PUZZLE_INPUT = parse_input(
+    (Path(__file__).parent / "data" / "dayXX.txt").read_text()
+)
 
 EXAMPLE_INPUT = parse_input("""\
 """)
