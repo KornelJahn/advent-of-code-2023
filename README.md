@@ -3,15 +3,13 @@
 My Python solutions to [Advent of Code 2023](https://adventofcode.com/2023)
 puzzles.
 
-After cloning this repo, to enter a development shell to edit the package and
-run tests, execute
+Clone this repo locally as
 ```sh
+git clone git@github.com:KornelJahn/advent-of-code-2023.git &&
 cd advent-of-code-2023
-nix develop --experimental-features 'nix-command flakes' .#
 ```
-and then `pytest` in the subshell.
 
-To run the tests only without manual cloning:
+To run the tests, execute
 ```sh
-nix develop --experimental-features 'nix-command flakes' github:KornelJahn/advent-of-code-2023 --command pytest
+nix develop --experimental-features 'nix-command flakes' .# --command pytest
 ```
