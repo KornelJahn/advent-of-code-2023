@@ -1,6 +1,3 @@
-from collections import defaultdict
-
-
 def parse_input(raw_input):
     lines = raw_input.strip().split("\n")
     cards = [
@@ -33,6 +30,6 @@ def preorder_dfs(tree):
 
 
 def children(node):
-    if not node or node[0] == 0:
+    if node[0] == 0:
         return []
     return [node[i:] for i in range(1, node[0] + 1)]
