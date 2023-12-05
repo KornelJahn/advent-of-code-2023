@@ -9,25 +9,18 @@ def parse_input(raw_input):
 
 
 def solve_part1(win_counts):
+    def points(count):
+        return 2**(count - 1) if count > 0 else 0
+
     return sum(points(win_count) for win_count in win_counts)
 
 
 def solve_part2(win_counts):
-    tree = [len(win_counts)] + win_counts
-    return sum(1 for node in preorder_dfs(tree))
-
-
-def points(count):
-    return 2**(count - 1) if count > 0 else 0
-
-
-def preorder_dfs(tree):
-    for node in children(tree):
-        yield node
-        yield from preorder_dfs(node)
-
-
-def children(node):
-    if node[0] == 0:
-        return []
-    return [node[i:] for i in range(1, node[0] + 1)]
+    card_counts = [1 for _ in win_counts]
+    for i, n in enumerate(win_counts):
+        for j in range(n):
+            try:
+                card_counts[i + j + 1] += card_counts[i]
+            except IndexError:
+                pass
+    return sum(card_counts)
