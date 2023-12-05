@@ -3,8 +3,8 @@ import re
 
 def parse_input(raw_input):
     games = []
-    for line in raw_input.split("\n"):
-        draws = re.findall(r"([0-9]+) ([a-z]+)", line.split(": ")[1])
+    for line in raw_input.strip().split("\n"):
+        draws = re.findall(r"([0-9]+) ([a-z]+)", line)
         games.append({
             color: max(int(v) for v, k in draws if k == color)
             for color in ("red", "green", "blue")
