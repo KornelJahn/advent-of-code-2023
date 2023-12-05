@@ -1,13 +1,11 @@
 def parse_input(raw_input):
     lines = raw_input.strip().split("\n")
-    cards = [
-        [group.split() for group in line.split(": ")[1].split(" | ")]
-        for line in lines
-    ]
-    win_counts = [
-        len(set(winning).intersection(mine)) for winning, mine in cards
-    ]
-    return win_counts
+
+    def count_wins(line):
+        winning, own = (s.split() for s in line.split(":")[1].split("|"))
+        return len(set(winning) & set(own))
+
+    return [count_wins(line) for line in lines]
 
 
 def solve_part1(win_counts):
