@@ -3,7 +3,7 @@ from aoc2023.day06 import parse_input, solve_part1, solve_part2
 
 
 def test_part1():
-    assert solve_part1(EXAMPLE_INPUT) == None
+    assert solve_part1(EXAMPLE_INPUT) == 288
     assert solve_part1(PUZZLE_INPUT) == None
 
 
@@ -17,4 +17,6 @@ PUZZLE_INPUT = parse_input(
 )
 
 EXAMPLE_INPUT = parse_input("""\
+Time:      7  15   30
+Distance:  9  40  200
 """)
