@@ -60,8 +60,9 @@ def get_type_strength(hand, joker):
             occurences = list(
                 dict(Counter(hand_without_jokers).most_common()).values()
             )
-        # Best type outcome is when the joker is the most frequent card, i.e.
-        # the number of most frequent card is increased
+        # Best type-outcome is when the joker becomes the most frequent card,
+        # i.e. the number of the most frequent card is increased by the number
+        # of jokers
         occurences[0] += joker_count
     else:
         occurences = dict(Counter(hand).most_common()).values()
