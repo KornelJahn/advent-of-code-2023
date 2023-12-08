@@ -40,9 +40,10 @@ def solve_part2(input_):
             nodes[-1].append(final_node)
 
         if i > 0:
-            # Check if we can assume that the counts have a fixed period
+            # Verify assumptions based on input data observation
+            # Verify if counts have a fixed period
             assert counts[-1] == counts[-2]
-            # Check if starting from a final node returns to the same one
+            # Verify if starting from a final node returns to the same one
             assert nodes[-1] == nodes[-2]
 
     return math.lcm(*counts[-1])
