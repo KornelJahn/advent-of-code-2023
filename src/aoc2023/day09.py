@@ -10,11 +10,11 @@ def parse_input(raw_input):
 
 
 def solve_part1(multi_series):
-    return sum(extrapolated_value(xs) for xs in multi_series)
+    return sum(extrapolate(xs) for xs in multi_series)
 
 
 def solve_part2(multi_series):
-    return sum(extrapolated_value(list(reversed(xs))) for xs in multi_series)
+    return sum(extrapolate(list(reversed(xs))) for xs in multi_series)
 
 
 # Recurrence relation for an arbitrary element of the triangle:
@@ -36,11 +36,18 @@ def solve_part2(multi_series):
 #
 # In summary, the extrapolated value is simply the sum of diagonal elements.
 
-def extrapolated_value(xs):
-    triangle = []
-    for _ in range(len(xs)):
-        triangle.append(xs)
+# # Tail-recursive version
+# def extrapolate(xs, acc=0):
+#     if all(x == 0 for x in xs):
+#         return acc
+#     else:
+#         return extrapolate([y - x for y, x in zip(xs[1:], xs)], acc + xs[-1])
+
+# Manually tail-call optimized version
+def extrapolate(xs):
+    acc = 0
+    while True:
+        acc += xs[-1]
         xs = [y - x for y, x in zip(xs[1:], xs)]
         if all(x == 0 for x in xs):
-            break
-    return sum(row[-1] for row in triangle)
+            return acc
