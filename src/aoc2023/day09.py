@@ -18,7 +18,7 @@ def solve_part2(multi_series):
 
 
 # Recurrence relation for an arbitrary element of the triangle:
-# a[i,j] = a[i-1,j+1] - a[i-1, j]
+# a[i,j] = a[i-1,j+1] - a[i-1,j]
 #
 # Diagonal elements:
 # a[0,n] = a[1,n-1] + a[0,n-1]
