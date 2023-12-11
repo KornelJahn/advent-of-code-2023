@@ -26,11 +26,11 @@ def sum_of_distances(galaxies):
 
 
 def expand(galaxies, factor):
-    # The row and column indices of empty empty rows and columns, respectively
-    vs, hs = (set(range(len(xs))) - set(xs) for xs in zip(*galaxies))
+    # Row and column indices of empty rows and columns, respectively
+    ies, jes = (set(range(len(xs))) - set(xs) for xs in zip(*galaxies))
     c = factor - 1
     return [
-        (i + c * sum(v < i for v in vs), j + c * sum(h < j for h in hs))
+        (i + c * sum(ie < i for ie in ies), j + c * sum(je < j for je in jes))
         for i, j in galaxies
     ]
 
