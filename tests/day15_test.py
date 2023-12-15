@@ -4,13 +4,12 @@ from aoc2023.day15 import parse_input, solve_part1, solve_part2
 
 def test_part1():
     assert solve_part1(EXAMPLE_INPUT) == 1320
-    # assert solve_part1(PUZZLE_INPUT) == None
+    assert solve_part1(PUZZLE_INPUT) == 509784
 
 
 def test_part2():
-    pass
-    # assert solve_part2(EXAMPLE_INPUT) == None
-    # assert solve_part2(PUZZLE_INPUT) == None
+    assert solve_part2(EXAMPLE_INPUT) == 145
+    assert solve_part2(PUZZLE_INPUT) == None
 
 
 PUZZLE_INPUT = parse_input(
