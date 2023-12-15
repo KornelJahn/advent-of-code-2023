@@ -9,7 +9,7 @@ def test_part1():
 
 def test_part2():
     assert solve_part2(EXAMPLE_INPUT) == 145
-    assert solve_part2(PUZZLE_INPUT) == None
+    assert solve_part2(PUZZLE_INPUT) == 230197
 
 
 PUZZLE_INPUT = parse_input(
